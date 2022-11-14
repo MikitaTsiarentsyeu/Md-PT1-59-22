@@ -13,7 +13,7 @@ amount, date_range, fee_year = decimal.Decimal(input_parametrs[0]), \
 index = 1
 
 while decimal.Decimal(index) <= date_range:
-    amount = amount + (amount * (fee_year / decimal.Decimal('100')))
+    amount = amount * (1 + (fee_year / decimal.Decimal('100')))
     index = index + 1
     final_profit = amount
 
@@ -30,7 +30,7 @@ if user_activity == 'Y':
     print('Final summ:\n')
 
     while decimal.Decimal(index) <= date_range * decimal.Decimal('12'):
-        amount = amount + (amount * (fee_year / decimal.Decimal('100')))
+        amount = amount * (1 + (fee_year / decimal.Decimal('100')))
         index = index + 1
     print(amount)
 
