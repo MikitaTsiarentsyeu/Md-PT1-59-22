@@ -33,7 +33,7 @@ while True:
             count += calculation_yes
             print("Profit of the " + str(i+1) + " Month: "+str(calculation_yes))
         print("Total Profit is: "+str(count-money_amoun))
-        print("Total money is: "+str(count))
+        print("Total money at the end of deposit is: "+str(count))
         break
     elif month_cap == "no":
         calculation_no = ((money_amoun * year_per * year_dep) / 100).__round__(2)
@@ -41,10 +41,12 @@ while True:
         monthly_profit = (calculation_no / 12).__round__(2)
         print("Monthly profit: "+str(monthly_profit))
         print("Total profit: "+str(total-money_amoun))
-        print("Total money: "+str(total))
+        print("Total money at the end of deposit: "+str(total))
         break
     else:
         print("YOU MUST ENTER ONLY YES OR NO!\nPlease try again")
+
+
 
 
 
