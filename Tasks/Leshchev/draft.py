@@ -6,8 +6,7 @@ def calculation(a, b):
     answer = input("Do you want to add monthly capitalization (yes/no)")
     if answer == "yes":
         mounth = int(input("Enter the number of months: "))
-        All_sum = 0
-        freeValue = 0
+        All_sum = freeValue = 0
         while mounth != 0:
             All_sum = (freeValue + start_sum)*(annual_percentage/100/12) 
             freeValue = All_sum + freeValue
