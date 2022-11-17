@@ -1,0 +1,6 @@
+x = float(input('Please enter deposit amount'))
+y = int(input('Please enter number of year'))
+z = float(input('percent'))
+sum = (x*(1+z/100)**y)
+sum2 = round (sum, 2)
+print('Yous amount at the end', sum2)
