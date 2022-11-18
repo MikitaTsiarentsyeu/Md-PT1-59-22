@@ -8,7 +8,6 @@ f = 12
 
 if d == 0:
     S = (a * ((1 + ((c/100)/f))**(f*b)))
-    Y = decimal.Decimal(S)
     print (S)
 
 if d == 1:
