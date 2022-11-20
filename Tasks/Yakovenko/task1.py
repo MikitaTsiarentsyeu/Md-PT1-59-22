@@ -10,4 +10,5 @@ term = decimal.Decimal(input("Please enter the deposit term:"))
 percent = decimal.Decimal(input("Please enter the percent value:"))
 
 totalAmount=(dep*percent*term)/100+dep
+totalAmount = round (totalAmount, 2)
 print("Total for the entire period ", totalAmount)
