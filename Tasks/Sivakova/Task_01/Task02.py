@@ -5,20 +5,22 @@ import math
 formula = input("Hello there! I'm gonna help you with conculation! Please. enter the formula in format: 'y=kx+b': \n" )
 new_formula = formula.replace(" ", "") 
 withone = new_formula.replace ('=x', '=1*x')
-withoutsymbol = withone.replace ('*', '')
+withminus = withone.replace('=-x', '=-1*x')
 
+print(withminus)
 print("Ok! Hope follow the formula and now we have your values!" )
 
 
 x= decimal.Decimal(input("Please enter x velue: "))
 
     
-withoneandx= withone.replace("x", str(x))
+withoneandx= withminus.replace("x", str(x))
 all= withoneandx.replace("x", str(x))
 withouty = all.replace("y=", "")
 withoutplus = withouty.replace("+", " ")
 withoutany = withoutplus.replace("*", " ")
 final = withoutany.split(" ")
+print(final)
 
 k = decimal.Decimal(final[0])
 x = decimal.Decimal(final[1])
