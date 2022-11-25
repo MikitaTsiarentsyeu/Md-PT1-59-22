@@ -87,9 +87,8 @@ def define_variable(a) :                             #function define some situa
 
 	v_3 = "".join(variable_3)
 	
-	print("Used variable: " , variable_1, variable_2, variable_3)
 	print(f" k = {v_2} and b = {v_3}")
-	print("Your function : " , f" y = ({v_2} x + {v_3})")
+	print(f"Your function : y = ({v_2} x + {v_3})")
 	enter(v_1, v_2, v_3, symbols)
 	
 def enter(a, b, c, e):                  #function enter   
@@ -98,7 +97,6 @@ def enter(a, b, c, e):                  #function enter
 	for i in enter_user:
 		if i in symbols[0 : 12] :
 			user.append(i)
-			print(user)
 	if user == [ ]:
 		print("You have done mistakes")
 		enter(a, b, c, e)		
@@ -109,11 +107,10 @@ def enter(a, b, c, e):                  #function enter
 	
 	print("You entered " ,user)
 	user = "".join(user)
-	print("You got ", user)
 	y = (float(b) * float(user) + float(c))/float(a)
 	if y == "-0.0":
 		y *= -1   
-	print(y)	
+	print(f"answer, y =  {y : .2f}")	
 	
 def clear_variable(a, line = 0):                   #function_3 | delete unnecessary point in variable
 	if "." in a:
