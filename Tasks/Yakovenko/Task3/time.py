@@ -12,14 +12,15 @@
 # min >= 45 без min такого-то (08:54 - без шести минут девять)
 
 from datetime import datetime
-
-type_of_work = input("Please enter the type of program operation: current time(c) or your time (t):\n")
 while True:
-    if len(type_of_work) != 1:
-        print("Please enter the program type in the correct form: current time(c) or your time (t):")
+    type_of_work = input("Please enter the type of program operation: current time(c) or your time (t):\n")
 
+    if len(type_of_work) != 1:
+        print("Please use only one symbol: (c) or (t):\n")
+        continue
     if type_of_work[0] != 'c' or type_of_work[0] != 't':
-        print("The data is in incorrect format, a dot is mnissing")
+        print("Please use only: (c) or (t):\n")
+        continue
 
 print("the main logic goes here")
 # # Current datetime
