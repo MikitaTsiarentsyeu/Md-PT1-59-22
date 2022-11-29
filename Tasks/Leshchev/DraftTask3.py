@@ -71,19 +71,14 @@ def output(a, b, c):
 				
 def last(a , b , c , d, e):
 	if int(a[1]) == 00 :
-		print(1)
 		print(f"Первый вариант. Ваше время:  {b[0]} ровно ")
 	elif int(a[1]) < 30 :
-		print(2)
 		print(f"Первый вариант. Ваше время:  {b[1]}  {c [ int(a[0] )+1] } ")		
 	elif int(a[1]) == 30 :
-		print(3)
 		print(f"Первый вариант. Ваше время:  половина  {c [ int(a[0] )] } ")		
 	elif int(a[1]) > 30 and int(a[1]) < 45 :
-		print(4)
 		print(f"Первый вариант. Ваше время:  {b[1]}  {c [ int(a[0] )+1] } ")	
 	elif int(a[1]) >= 45 :
-		print(5)
 		print(f"Первый вариант. Ваше время:  без {d[ 60-int(a[1]) ]} минут {e[int(a[0])+1] }")			
 			
 
