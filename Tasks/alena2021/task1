@@ -1,0 +1,9 @@
+import decimal
+
+a = int(input("Please enter deposit start value, BYN: "))
+b = int(input("Please enter deposit term, years: "))
+c = int(input('Please enter annual rate: '))
+
+y = a*(1+(c/100))**b
+
+print('You will get, BYN: ', decimal.Decimal(str(y)))
