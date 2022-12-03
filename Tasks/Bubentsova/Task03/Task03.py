@@ -78,7 +78,7 @@ while True:
                 hours_int += 1
                 hours_wording = hours2_dictionary[hours_int]
                 minutes_wording = minutes_dictionary[minutes_int]
-                time_value = ' '.join([minutes_wording,hours_wording]) + " утра"
+                time_value = ' '.join([minutes_wording,hours_wording])
             else:
                 hours_int += 1
                 hours_wording = hours_dictionary[hours_int]
@@ -92,7 +92,7 @@ while True:
                 hours_int += 1
                 hours_wording = hours2_dictionary[hours_int]
                 minutes_wording = minutes_dictionary[minutes_int]
-                time_value = ' '.join([minutes_wording,hours_wording]) + " дня"
+                time_value = ' '.join([minutes_wording,hours_wording])
             else:
                 hours_int += 1
                 hours_wording = hours_dictionary[hours_int]
