@@ -1,0 +1,13 @@
+y = input("Please enter expression like 'kx + b':")
+#remove spaces
+if y.find(' '): y = (y.replace(' ','')) 
+#calculate k
+vorx=y.find('x')
+k=y[0:vorx] 
+#calculate b
+b=y[vorx+1:len(y)]
+x = int(input("Please enter x: "))
+#calculate y
+y = (int(k) * x) + int(b)
+print ('y равен = ',y)
+
