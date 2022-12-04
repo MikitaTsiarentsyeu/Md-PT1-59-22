@@ -24,7 +24,7 @@ for i in range(len(number)-1):
         print(f'{number[i]}+{number[i+1]} = {number[i]+number[i+1]}')
 
 
-for i in range(0, 21, 2):
+for i in range(0, max(number)+1, 2):
     if i in number:
         number.remove(i)
 print(sum(number))
