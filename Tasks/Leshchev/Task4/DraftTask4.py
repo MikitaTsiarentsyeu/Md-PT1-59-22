@@ -3,8 +3,16 @@ variable = []
 num = 0
 v = []
 user_enter = int(input("Pleace, enter width the line (>=35) : "))
+def u_enter(user_enter) :
+        if user_enter < 35 :
+                print("You have done mistakes, try again")
+                user_enter = int(input("Pleace, enter width the line (>=35) : "))
+                u_enter(user_enter)
+                
 simbols = user_enter
 
+
+u_enter(user_enter)
 with open("text.txt", "r") as file:
 	for i in file:
 		line = line + i
