@@ -7,21 +7,20 @@
 # 4. Записать получившийся текст в новый файл и оповестить об этом пользователя.
 # (модуль textwrap использовать нельзя)
 
-while True:
-    number_user = input("Please enter the maximum number in line (more than 35 only)\n")
+# while True:
+#     number_user = input("Please enter the maximum number in line (more than 35 only)\n")
 
-    if len(number_user) != 2:
-        print("Please use only two digits\n")
-        continue
-    if not number_user.isnumeric():
-        print("The data is in incorrect format, you must only use digits")
-        continue
-    number = int(number_user)
-    if number < 35:
-        print("The value must be more than 35")
-        continue
+#     if len(number_user) != 2:
+#         print("Please use only two digits\n")
+#         continue
+#     if not number_user.isnumeric():
+#         print("The data is in incorrect format, you must only use digits")
+#         continue
+#     number = int(number_user)
+#     if number < 35:
+#         print("The value must be more than 35")
+#         continue
+#     break
 
-    break
-
-
-print("the main logic goes here")
+with open('ss.txt', 'r') as f:
+    print(f.readlines())
