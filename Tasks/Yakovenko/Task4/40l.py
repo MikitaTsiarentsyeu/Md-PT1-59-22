@@ -22,13 +22,21 @@ while True:
         continue
     break
 
-with open("ss.txt", 'r') as donor:
-    with open("ss_new.txt", 'w') as receiver:
-        
-        while True:
-            c = donor.read(number)
-
-            if c:
-                receiver.write(c +"\n")
-            else:
-                break
+list = []
+with open('ss.txt', 'r') as donor:    
+    with open('ss_new.txt', 'w') as receiver:   
+        text = donor.read().split()   
+        for i in text:           
+            if number - len(''.join(list)) >= len(i):  
+                list.append(i), list.append(' ')  
+            else:   
+                while len(''.join(list).rstrip()) != number: 
+                    for j, k in enumerate(list):
+                        if len(''.join(list).rstrip()) == number: 
+                            break 
+                        if k != ' ':
+                            list.insert(j + 1, ' ') 
+                receiver.write(''.join(list) + '\n') 
+                list = [i, ' ']
+        receiver.write(''.join(list))
+print ('New file ready')
