@@ -1,0 +1,1 @@
+open("new file from lessons.txt", 'w')
