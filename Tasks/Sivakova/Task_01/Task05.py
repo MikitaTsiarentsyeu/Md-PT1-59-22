@@ -10,7 +10,7 @@ def check_str(string) -> int:
             pass
         else:
             stroka+=1
-    return(title, stroka)
+    return f' It-s about {title} title letters, and {stroka} lowercase letters in your string'
 
 
    
@@ -29,6 +29,7 @@ def is_prime(number) -> bool:
         
 def get_ranges(number):
     lst = []
+    
    
     for i in range((len(number)-1)):
     
@@ -41,19 +42,27 @@ def get_ranges(number):
                 
         elif number[i]+1 != number[i+1] and number[i]-1 != number[i-1]:
                 lst.append(str(number[i])+', ')
-                
-    lst.append(str(number[-1])) 
+        
+    if number[-1]-1 == number[-2]:
+            lst.append(str(number[-1]))
+    else:
+            len(number)
+    if number[-1]-1 != number[-2]:
+            lst.append(str(number[-1]))
+    else:
+            len(number)
+    
     return (''.join(lst))
               
 
 
 
 
-print("Let's conculate sone function. We'll start with counting uppercase and lowercase letters")
+print("Let's conculate sone function. We'll start with counting uppercase and lowercase letters \n")
 print(check_str(str(input('Please, enter some text'))))
 time.sleep(1)
 print('_'*100)
-print("Tou can input your values to check this prime \n")
+print("You can input your values to check this prime \n")
 print(is_prime(int(input())))
 time.sleep(1)
 print('_'*100)
