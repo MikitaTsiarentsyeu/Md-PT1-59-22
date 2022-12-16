@@ -39,3 +39,46 @@ def is_prime(digit:int) -> bool:
             return False
     return True
 print(is_prime(355))
+
+def get_ranges(a):
+    l = []
+    list_1 = []
+    list_new = []
+    string = ''
+    
+    for i in range(len(a)-1):
+        if a[i+1] - a[i] >= 2:
+            list_1.append(a[i+1])
+
+    for j in list_1:
+        x = a.index(j)
+        l.append(x)
+    
+    for s in range(0,len(l)+1):                               
+        if s == 0:
+            p = a[s:l[s]]
+
+        if s == len(l):
+            p = a[l[s-1]:a[-1]]      
+
+        if s != 0 and s != len(l):
+            p = a[l[s-1]:l[s]]
+        list_new.append(p)
+
+    for y in list_new:
+        if y == list_new[-1] and len(y) > 1:
+            string += f'{y[0]}-{y[-1]}'
+
+        elif y == list_new[-1] and len(y) == 1:
+            string += f'{y[0]}'
+
+        elif len(y) == 1:
+            string += f'{y[0]}, '
+            
+        else: string += f'{y[0]}-{y[-1]}, '
+
+    print(string)
+
+get_ranges([4, 7, 10])
+get_ranges([2, 3, 8, 9])
+get_ranges([0, 1, 2, 3, 4, 7, 8, 10])
