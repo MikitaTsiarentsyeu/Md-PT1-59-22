@@ -1,5 +1,5 @@
 import random
-"""import time
+import time
 
 print ('\033[1m'"Let's conculate the sum of values from the list"'\033[0m')
 def sum(l):
@@ -28,8 +28,8 @@ def fib(n: int) -> list:
     li.append(li[-1] + li[-2])
    
     return li
-res = fib(int(input('Please, enter your values:\n')))
-print(f'The result is: {res}')
+res1 = fib(int(input('Please, enter your values:\n')))
+print(f'The result is: {res1}')
 
 time.sleep(2)
 
@@ -50,24 +50,20 @@ print ('\033[1m'"Let's try to sort values with marge sort\n"'\033[0m')
 time.sleep(2)
 
 def merge_sort(nums):
-   
+  
     part1 = len(nums) // 2
     n1 = nums[:part1]     
     n2 = nums[part1:]
-
     if len(n1) > 1:
         n1 = merge_sort(n1)
     if len(n2) > 1: 
-        n2 = merge_sort(n2)
-        
+        n2 = merge_sort(n2)  
+            
     list_of_numbers = []
     partone = len(n1)
     parttwo = len(n2)
-
     i = 0
     k = 0
-
-    
     while i < partone and k < parttwo:
         if n1[i] <= n2[k]:
             list_of_numbers.append(n1[i])
@@ -85,19 +81,19 @@ ares3=" ".join(a)
 print(f'The result is \n {ares3}')
 
 print ('\033[1m'"Let's try to sort values with quick sort\n"'\033[0m')
-time.sleep(2)"""
+
+time.sleep(2)
 
 def quicksort(nums):
    if len(nums) <= 1:
        return nums
    else:
-       q = random.choice(nums)
+       rand = random.choice(nums)
        s_nums, m_nums,e_nums = [], [], []
-       
        for n in nums:
-           if n < q:
+           if n < rand:
                s_nums.append(n)
-           elif n > q:
+           elif n > rand:
                m_nums.append(n)
            else:
                e_nums.append(n)
