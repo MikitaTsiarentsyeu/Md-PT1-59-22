@@ -7,6 +7,7 @@ def sum_list_numb(l:list) -> "taking list return sum(number)":
             riturn = l[0]
     elif isinstance(l[0],list):
         remove = l.pop(1)
+        l[0].append(remove)
         riturn = sum_list_numb(l)
     elif isinstance(l[1], list):
         remove = l.pop(0)
