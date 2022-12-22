@@ -13,6 +13,8 @@ print(f"{lst}, cумма элементов равна - {sum_el(lst)}")
 
 
 def fibonacci(n: int) -> list:
+    if n == 1:
+        return [0]
     if n == 2:
         return [0, 1]
     li = fibonacci(n - 1)
