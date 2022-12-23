@@ -38,10 +38,13 @@ def fibonachi(n):
 		a.append(a[-1]+a[-2])
 		n-=1
 		fibonachi(n)
-	elif n < 3 and n > 0 :
-		print(a[:n]) 
+		return a
+	elif n == 2 :
+		return a
+	elif n < 2 and n >= 0 :
+		return a[:n] 
 		
-fibonachi(15)
+print(fibonachi(1))
 
 def konkot(a, n = 0, b=""):          #Task 6.3
 	if n < len(a):
