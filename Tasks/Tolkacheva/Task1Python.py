@@ -2,8 +2,10 @@ from decimal import Decimal
 
 #По-хоршему надо задать формат ввода значений для пользователя, не знаю пока, особенно с булевыми ясно что-то умнее можно
 
-Amount, Years, Percentage, Cap = Decimal(input("Enter the value of the initial amount of your deposit (BYN):")), Decimal(input("Enter the term of your deposit (in years):")), Decimal(input("Enter the value of the annual percentage of your deposit (%):")), (input("Do you want to enable monthly capitalization? (Please type [yes] if you want to enable capitalization, otherwise capitalization will not be performed:")) 
-
+Amount = Decimal(input("Enter the value of the initial amount of your deposit (BYN):")) 
+Years = Decimal(input("Enter the term of your deposit (in years):"))
+Percentage = Decimal(input("Enter the value of the annual percentage of your deposit (%):")) 
+Cap = (input("Do you want to enable monthly capitalization? (Please type [yes] if you want to enable capitalization, otherwise capitalization will not be performed:")) 
 
 
 if Cap.upper()=="YES": 
