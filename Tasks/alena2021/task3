@@ -1,0 +1,51 @@
+from datetime import datetime
+
+value = input ("Хотите ввести ваше время? Введите 'Да'или 'Нет':\n")
+if value == 'Нет': 
+    current_time = datetime.now().time()
+    current_hour = current_time.hour
+    current_minute = current_time.minute
+else: 
+    while value == 'Да':
+        user_input = input ("Введите время в формате 'hh:mm', например, 09:15: или напишите 'Выход' для выхода из программы\n")
+        if user_input == 'Выход': exit()
+        if len(user_input) != 5: 
+            print('Неправильный формат: неверное количество символов. Попробуйте еще раз.')
+            continue
+        if user_input[2] != ':': 
+            print('Неправильный формат: двоеточие пропущено или неверно. Попробуйте еще раз.')
+            continue 
+        
+        parts = user_input.split(':')
+        failed = False
+        for i, part in enumerate(parts):
+            if not part.isnumeric():
+                failed = True
+                break
+            parts[i] = int(part)
+        if failed:
+            print("Неправильный формат: могут быть только цифры и двоеточие. Попробуйте еще раз.")
+            continue
+
+        if parts[0] > 24:
+            print("Неправильно указаны часы: значение не может быть больше 24. Попробуйте еще раз.")
+            continue
+        
+        if parts[1] > 60:
+            print("Неправильно указаны минуты: значение не может быть больше 60. Попробуйте еще раз.")
+            continue
+        break
+    current_hour = parts[0] 
+    current_minute = parts[1]
+
+hour = {1:'первого', 2:'второго', 3:'третьего', 4:'четвертого', 5:'пятого', 6:'шестого', 7:'седьмого', 8:'восьмого', 9:'девятого', 10:'десятого', 11:'одиннадцатого', 12:'двенадцатого', 13: 'первого'}
+minute = {45:'пятнадцати', 46:'четырнадцати', 47:'тринадцати', 48:'двенадцати', 49:'одиннадцати', 50:'десяти', 51:'девяти', 52:'восьми', 53:'семи', 54:'шести', 55:'пяти', 56:'четырех', 57:'трех', 58:'двух', 59:'одной'}
+    
+if current_hour > 12 or current_hour == 12: current_hour = current_hour - 12   
+
+if current_minute == 00: print (str(current_hour) + ' ' + 'час(а/ов)' + ' ' + 'ровно')
+if current_minute < 30 and current_minute != 00:  print (str(current_minute) + ' ' + 'минут(ы)' + ' ' + str(hour[current_hour + 1]))
+if current_minute == 30:  print ('половина' + ' ' + str(hour[current_hour + 1]))
+if current_minute > 30 and current_minute < 45:  print (str(current_minute) + ' ' + 'минут(ы)' + ' ' + str(hour[current_hour + 1]))
+if current_minute > 45 or current_minute == 45:  print ('без' + ' ' + str(minute[current_minute]) + ' ' + 'минут' + ' ' + str(hour[current_hour + 1]))
+
