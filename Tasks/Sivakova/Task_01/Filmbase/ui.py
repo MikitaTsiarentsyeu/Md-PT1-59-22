@@ -16,6 +16,9 @@ print(frg + Style.BRIGHT +"Choose operation: \n\
       6. Remove special genre of films\n\
       7. Choose tickets\n\
       8. Return to the profile"+frw)
+def choose_operation():
+    return print(frr+'Please, choose another operation:\n'+frw)
+    
 
 
 dict= bl.dict
@@ -70,7 +73,7 @@ def choose_tickets():
         {frr} {descr[0]}{frw}, genre {frr} {descr[1]}{frw}, {frr} {descr[2]}{frw} sits left')
     
 def count_of_sits():
-    name = input(frg+'}Please, enter the filmname to get additional information '+frw)
+    name = input(frg+'Please, enter the filmname to get additional information '+frw)
     dict = bl.dict
     sits = dict[name][2]
     return print(f'{frr}{sits}{frw} left')
@@ -90,16 +93,19 @@ while True:
     user = input()
     if user=='1':
         get_names()
-        
+        choose_operation()
     if user=='2':
         get_all_films()
-        
+        choose_operation()
     if user=='3':
         search_info()
+        choose_operation()
     if user=='4':
         count_of_sits()        
+        choose_operation()
     if user=='5':
         favorites()
+        choose_operation()
         while True:
             user1 = input(Fore.GREEN +'Do you want add film again? Yes/No '+Fore.WHITE )
             if user1=="Yes":
@@ -107,12 +113,15 @@ while True:
             
             if user1=='No':
                  print('Done')
+                 choose_operation()
                  break
     if user=='6':
         remove_film()
+        choose_operation()
         
     if user=='7':
         choose_tickets()
+        choose_operation()
   
         
     if user=='8':
