@@ -1,0 +1,2 @@
+Name:piter,Last_name:vishnevski,Address:moscow st.naberezhnay 45,Company:OAO lukoil,Phone:+74951234567
+Name:artem,Last_name:sokolovski,Address:minsk st.nezavisimosti 55,Company:OAO MAZ,Phone:+375299874123

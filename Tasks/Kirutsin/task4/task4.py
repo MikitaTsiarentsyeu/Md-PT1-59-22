@@ -4,17 +4,19 @@ final_string = ''
 user_choise = int(input('Hello!\nPlease provide maximum number of characters per line.Input please, your value:\n'))
 source = open('../../!Tasks/Task4/text.txt', 'r')
 text = source.read().replace('\n', '')
+source.close()
+
 format_string = ''
 
 # formatting
 for i in text:
-    format_string +=i
+    format_string += i
     index = index + 1
 
     if index == user_choise - 1:
         index = 0
 
-       # formating
+        # formating
         if format_string[0] == ' ':
             replace_point = format_string[1:].find(' ')
             result = format_string[1:replace_point + 1] + ' ' + format_string[replace_point + 1:]
@@ -44,5 +46,6 @@ for i in text:
         format_string = ''
 
 # result text
-with open("result.txt",'w') as f:
+with open("result.txt", 'w') as f:
     f.write(final_string)
+    f.close()
