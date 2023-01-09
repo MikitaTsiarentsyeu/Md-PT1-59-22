@@ -64,5 +64,5 @@ def get_ranges(list_source: list) -> str:
     return result
 
 #test 3
-source = [0, 1, 2, 3, 4, 7, 8, 10]
-print(get_ranges(source))
+# source = [0, 1, 2, 3, 4, 7, 8, 10]
+# print(get_ranges(source))
