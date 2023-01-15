@@ -1,0 +1,57 @@
+p {
+    color: blueviolet;
+}
+
+#my_p {
+    color: chartreuse;
+}
+
+.test_class {
+    color:darkgoldenrod
+}
+
+#header {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+}
+
+#content {
+    background-color: darkred;
+    display: flex;
+}
+
+#footer {
+    background-color: darkmagenta;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left {
+    background-color:chartreuse;
+    width: 25%;
+}
+
+#center {
+    background-color: darkgreen;
+    width: 60%;
+}
+
+#right {
+    background-color:darkolivegreen;
+    width: 15%;
+}
+
+#footer_copy {
+    margin: 0;
+}
+
+#logo {
+    margin-left: 4%;
+}
+
+#login {
+    margin: 1%;
+}
