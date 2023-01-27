@@ -73,5 +73,30 @@ def reverse(sourcer):
             index_del = sourcer[0][0:-1]
             return reverse([index_del, sourcer[1] - 1, index_summ])
 
+
 # test_3 = reverse("hello")
 # print(test_3)
+
+def quicksort(numbers: list) -> list:
+    """
+
+    :param numbers: only list
+    :return: quicksort list
+    """
+    # exit
+    if not len(numbers):
+        return []
+
+    else:
+        main = numbers[0]
+
+        # recursive part
+        part1 = quicksort([i for i in numbers[1:] if i < numbers[0]])
+        part2 = quicksort([i for i in numbers[1:] if i >= numbers[0]])
+
+        # result
+        result = part1 + [main] + part2
+        return result
+
+# test_4 = quicksort([1, -32, 5, 10, 0, 33, 7, 5])
+# print(test_4)
