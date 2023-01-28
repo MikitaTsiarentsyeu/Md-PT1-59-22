@@ -19,5 +19,8 @@ from app import views as app_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', app_views.home)
+    path('home/', app_views.home),
+    path('posts/', app_views.posts, name="posts"),
+    path('posts/<int:id>', app_views.post, name="post"),
+    # path('posts/<str:id>', app_views.post, name="post"),  
 ]
