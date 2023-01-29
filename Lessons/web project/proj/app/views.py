@@ -1,6 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 import datetime
 from .models import Author, Post
+from .forms import AddPost, AddPostModelForm
 
 # Create your views here.
 def home(request):
@@ -8,13 +9,45 @@ def home(request):
     return render(request, 'home.html', {'time':str(current_time)})
 
 def posts(request):
-    count = Post.objects.all().count()
-    return HttpResponse(f"<h1>Total posts count is {count}</h1>")
+    posts = Post.objects.all()
+    return render(request, 'posts.html', {'posts':posts})
 
 def post(request, id):
     try:
         p = Post.objects.get(id=id)
-        res = f"<h1>{p.title}</h1><h3>{p.subtitle}</h3><p>{p.content}</p>"
     except:
-        res = f"<h1>Nothing was found</h1>"
-    return HttpResponse(res)
+        p = False
+    return render(request, 'post.html', {'post':p, 'id':id})
+
+def add(request):
+    if request.method == "POST":
+        form = AddPost(request.POST, request.FILES)
+        if form.is_valid():
+            post = Post()
+            post.title = form.cleaned_data["title"]
+            post.subtitle = form.cleaned_data["subtitle"]
+            post.content = form.cleaned_data["content"]
+            post.post_type = form.cleaned_data["post_type"]
+            post.image = form.cleaned_data["image"]
+            post.issued = datetime.datetime.now()
+            post.author = Author.objects.all()[0]
+
+            post.save()
+            return redirect('posts')
+    else:
+        form = AddPost()
+    return render(request, 'add.html', {'form':form})
+
+def add_model(request):
+    if request.method == "POST":
+        form = AddPostModelForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.issued = datetime.datetime.now()
+            post.author = Author.objects.all()[0]
+
+            post.save()
+            return redirect('posts')
+    else:
+        form = AddPostModelForm()
+    return render(request, 'add.html', {'form':form})
