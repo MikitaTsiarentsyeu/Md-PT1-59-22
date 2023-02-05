@@ -1,0 +1,27 @@
+#header {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+}
+
+.post-image {
+    width: 30%;
+}
+
+.post {
+    border-bottom: 2px blueviolet dashed;
+}
+
+#logo {
+    padding-left: 5%;
+}
+
+#links {
+    padding: 1%;
+}

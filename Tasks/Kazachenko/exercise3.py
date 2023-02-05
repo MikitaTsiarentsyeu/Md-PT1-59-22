@@ -29,7 +29,6 @@ datetime.datetime.now().time()
 
 while True:
     time_value = input("Do you want to type the time value yourself (y/n)?\n")
-
     if time_value == 'y':
         print("The data is in the wrong format, the colon is missing.")
         if len(time_value) != 5:
@@ -63,7 +62,6 @@ while True:
             print (f"Ваше время {hours[hh]} часа ровно")
         elif hh > 4:
             print (f"Ваше время {hours[hh]} часов ровно")
-
         if mm <= 30:
             if mm == 1:
                 print (f"Ваше время {minutes[mm]} минута {hours2[hh]}" )
@@ -83,3 +81,4 @@ while True:
         if mm > 45:
             print (f"Ваше время без {minutes2[mm]} минут {hours[hh]}" )
             break
+
