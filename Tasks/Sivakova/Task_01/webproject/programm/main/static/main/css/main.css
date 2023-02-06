@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(164, 252, 255);
+}
+.alert-warning {
+    
+    margin-left: 50px;
+     
+    }
+aside {
+    float:left;
+    background: rgb(0, 21, 29);
+    width: 30%;
+    padding: 3%;
+    height: 110vh;
+    color:rgb(255, 255, 255);
+    border-right: 5px solid #242235;
+
+
+}
+aside img {
+    width: 40%;
+    float:left;
+
+}
+aside .logo {
+    font-size: 80px;
+    margin-left: 10px;
+    font-weight: bold;
+
+}
+
+aside h3 {
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+aside ul {
+
+    list-style:none;
+}
+aside ul li {
+    color: azure;
+    display: block;
+    margin-top: 20px;
+    transition: all .6s ease;
+}
+aside ul li:hover, aside ul li a:hover {
+    color:aqua;
+    text-decoration: none;
+    transform: scale(1.05);
+
+
+}
+main .features {
+
+    
+
+    text-align: center;
+    width: 75%;
+   
+}
+
+main .features h1 {
+
+    font-size: 50px;
+    text-align: center;
+}
+
+main .features p {
+
+    font-size: 20px;
+    margin: 20px auto;
+
+}
+aside  {margin-top: -10px;}
+aside section .one_img {width: 10%;float: left;margin-top: 300px;}

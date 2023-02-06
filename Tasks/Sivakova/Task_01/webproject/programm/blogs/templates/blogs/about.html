@@ -1,0 +1,51 @@
+
+{%extends 'main/layout.html'%}
+{%load static%}
+
+{%block title%}
+О нас
+{%endblock%}
+
+{%block content%}
+<div class = "features">
+    <h1> Отзывы </h1>
+    <h3>от наших четвероногих посетителей и их хозяев </h3>
+
+  
+    <a href="/blogs/comments">
+        <button class="btn btn-warning" > Напиши о VetClinic</button>
+    </a>
+</div>
+    <section class='png'>
+        <img src="{% static 'main/img/pngegg (2).png'%}">
+    </section>
+     <br>            
+    {%for el in visit%}
+    <div class="block" >               
+       <div class="one">
+            <h6 class="display-1">{{el.content}}</h6>
+        </div> 
+        
+
+        <div class="two">
+           {{el.name}} {{el.surname}}
+           <h3 class="qal">Качество обслуживания:<h4 class="qal_ch">{{el.choice}}</h4></h3>
+        </div> <br>
+        
+        <div class="three" style="float:right;">
+           
+            
+        </div>  <br>
+    </div>
+                        
+    {%endfor%}    
+                        
+
+               
+              
+            
+     
+                 
+{%endblock%}
+
+

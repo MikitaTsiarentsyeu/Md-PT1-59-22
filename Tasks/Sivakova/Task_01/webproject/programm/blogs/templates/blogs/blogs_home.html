@@ -1,0 +1,60 @@
+{%extends 'main/layout.html'%}
+
+
+        {%block title%}Услуги {%endblock%}
+  
+      
+    {%block content%}
+
+        <h1 class="logotype">Услуги</h1>
+        
+        {%for i in blogs%}
+       <div class="all", style='overflow:hidden; transform:0.5s; margin-left:800px;'>
+            <section class="image">
+                <img src="{{i.image.url}}"><br>
+                
+                <br>
+            
+            
+                <h3>  {{i.titl}}</h3>
+                <h4> {{i.shorttitle}}</h4>
+                
+                
+            
+        </section>
+        </div>
+     
+        {%endfor%}
+        <div class='but'>
+           <a href="{%url 'create_visitor'%}">
+            <button class="btn btn-warning">Записаться</button>
+            </a> <br>
+        </div>
+        <div class='but01'>
+               <a href="{%url 'create_visitor01'%}">
+                <button class="btn btn-warning">Записаться</button>
+                </a> <br>
+        </div>
+        <div class='but02'>
+                   <a href="{%url 'create_visitor02'%}">
+                    <button class="btn btn-warning">Записаться</button>
+                    </a> <br>
+        </div>
+        <div class='but03'>
+                       <a href="{%url 'create_visitor03'%}">
+                        <button class="btn btn-warning">Записаться</button>
+                        </a> <br>
+        </div>
+        <div class='but04'>
+                           <a href="{%url 'create_visitor04'%}">
+                            <button class="btn btn-warning">Записаться</button>
+                            </a> <br>
+       </div>
+                    
+        
+    
+
+           
+      
+    
+    {%endblock%}

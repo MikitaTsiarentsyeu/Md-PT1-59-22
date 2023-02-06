@@ -1,0 +1,8 @@
+.col { font-size: 50px;
+    text-align: center; background: url("../img/women.gif"); height: 1000px; } 
+    .txt h1{font-size: 45px; color: antiquewhite;}
+    .txt p{font-size: 40px;}
+    .txt p, h1 {text-align: center;}
+    .txt button {margin-left: 70px;}
+    
+
