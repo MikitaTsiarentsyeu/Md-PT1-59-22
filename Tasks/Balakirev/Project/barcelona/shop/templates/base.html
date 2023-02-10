@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link href="{% static 'css/base.css' %}" rel="stylesheet">
+<style>
+     body {
+        background-image: url({% static "img/barcelona.jpg"%});
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover
+     }
+</style>
+</head>
+<body>
+<div id="header">
+<a href="/" class="logo">Barça store</a>
+</div>
+<div id="subheader">
+<div class="cart">
+    {% with cart|length as total_items %}
+    {% if cart|length > 0 %}
+    In the cart:
+    <a href="{% url 'cart:cart_detail' %}">
+        {{ total_items }} product, {{ cart.get_total_price }}&#8364;
+    </a>
+    {% else %}
+    Cart is empty
+    {% endif %}
+    {% endwith %}
+</div>
+</div>
+<div id="content">
+{% block content %}{% endblock %}
+</div>
+</body>
+</html>
