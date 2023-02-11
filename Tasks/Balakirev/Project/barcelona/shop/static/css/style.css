@@ -144,7 +144,6 @@ ul.errorlist {
 }
 
 #header .logo {
-    font-family: auto;
     color: #f445f7;
     font-size: 150%;
     float: left;
@@ -235,11 +234,11 @@ ul.errorlist {
 }
 
 .product-detail h1 {
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
 .product-detail h2 {
-    margin-top:10px;
+    margin-top:20px;
 }
 
 .product-detail form label{
@@ -248,7 +247,7 @@ ul.errorlist {
 
 .descr{
     color: white;
-    padding-top: 100px;
+    padding-top: 120px;
     padding-right: 55%;
 }
 
