@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather forecast</title>
+    <style>
+       header {
+           background-color: lightblue;
+           color:black;
+           text-align: center;
+           width: auto;
+           height: 200px;
+       }
+       .leftBlock {
+           width: 50%;
+           height: auto;
+           background-color: beige;
+           color: black;
+           float: left;
+       }
+       .rightBlock {
+            width: 50%;
+            height: auto;
+            background-color: azure;
+            color:black;
+            float: right;
+       }
+       .info {
+          background-color: lavender;
+          color: black;
+          width: 200px;
+          height: auto;
+          display: flex;
+          flex-direction: row;
+       }
+       .information {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 1em;
+       }
+       .image {
+          display: flex;
+          flex-direction: column;
+       }
+       footer {
+           background-color: darkgrey;
+           color: black;
+           text-align: center;
+           width: auto;
+           height: 50px;
+           clear: both;
+       }
+    </style>
+</head>
+<body>
+   <header>
+      <h1>Welcome To The Weather Forecast Site</h1>
+       <img src="{% static 'weather/image/weather.png' %}" width="120" height="120" >
+   </header>
+   <div class="leftBlock">
+       <h1>Weather In Your City</h1>
+       <form action="" method="post">
+           {% csrf_token %}
+           <label for="city">City</label>
+           {{form.name}}
+           <input type="submit" name="send" value="Inquire">
+       </form>
+   </div>
+   <div class="rightBlock">
+       <h1>Information</h1>
+       {% for info in all_info %}
+       <div class="info">
+           <div class = information>
+            City: {{ info.city }} <br>
+            Temperature: {{ info.temp }} &#176; <br>
+            Humidity: {{ info.humidity }} &#37; <br>
+            Pressure: {{ info.pressure }} hPa <br>
+           </div>
+           <div class = image>
+            <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="weather photo">
+           </div>
+       </div>
+       {% endfor %}
+   </div>
+   <footer>Made By Andrei Ananich, Minsk, 2023</footer>
+</body>
+</html>
