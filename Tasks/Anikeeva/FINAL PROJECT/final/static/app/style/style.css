@@ -1,0 +1,170 @@
+#header {
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #001177;
+}
+
+#inf {
+    width: 100%;
+}
+
+#tel {
+    padding-left: 35%;
+    width: 100%;
+}
+
+.start {
+    width: 100%;
+}
+
+.logo {
+    width: 95%; 
+    padding-top: 7%;
+}
+
+#sale {
+    width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-image {
+    width: 75%;
+    border-radius: 10px;
+}
+
+#oil {
+    padding-left: 10%;
+}
+
+p {
+    width: 50%;
+}
+
+.oil_img {
+    width: 15%; 
+}
+
+.post {
+    width: 24%;
+    display: inline-block;
+}
+
+#info {
+    color: gray;
+    padding-left: 16%;
+    padding-top: 5%;
+}
+
+#footer {
+    background-color: dimgrey;
+}
+
+.promotion {
+    color: white;
+    background-color: #78dd2e;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -15px;
+    height: 3em;
+    text-align: center;
+    border: 0px solid #78dd2e;
+    border-radius: 10px;
+    width: 66em
+}
+
+#post_info {
+    padding-left: 10%;
+}
+
+.post_info_img {
+    width: 50%;    
+}
+
+.promotion.h1 {
+    position: absolute;
+    top: 50%;
+}
+
+#menu {
+    background-color: #d8e1eb;
+    text-align: center;
+}
+
+#top_menu {
+    display: inline-block;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#top_menu>li {
+    display: inline-block;
+    position: relative;
+}
+
+#top_menu>li>a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #001177;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+#top_menu>li>a:hover {
+    color: white;
+    background-color: #666565;
+}
+
+#top_menu>li:hover>ul a {
+    opacity: 1;
+}
+
+#top_menu>li:hover>ul li {
+    height: 40px;
+    opacity: 1;
+}
+
+.inner_menu {
+    position: absolute;
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    background-color: #d3d3d3;
+}
+
+.inner_menu>li {
+    height: 0;
+    opacity: 0;
+    transition: height 1.25s, opacity 1.25s;
+}
+
+.inner_menu>li>a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #001177;
+    text-decoration: none;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.4s, opacity 0.5s;
+    font-weight: bold;
+}
+
+.inner_menu>li>a:hover {
+    color: white;
+    background-color: #666565;
+}
+
+#comp {
+    text-align: center;
+    vertical-align: text-top;
+}

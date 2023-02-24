@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <div id = "oil">
+        {% if oil %}
+        <a href="{% url 'oil' oil.id %}"> 
+            <h2> {{ oil.name }}</h2>
+        </a>
+        <p>{{ oil.short_description }}</p>
+        {% if oil.image %}
+            <img src="{{ oil.image.url}}" class = "oil_img" />
+        {% endif %}
+        <p>{{ oil.description }}</p>
+        {% else %}
+            <h3> NEW KIND COMING SOON {{ id }}</h3>
+        {% endif %}
+    </div>
+{% endblock  %}

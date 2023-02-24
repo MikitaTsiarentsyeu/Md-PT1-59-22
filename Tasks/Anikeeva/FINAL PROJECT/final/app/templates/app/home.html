@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'app/style/style.css' %}">
+    </head>
+    <body>
+        <div id="header">
+            <a href = {% url 'home' %}>
+            <img src="{% static 'app/img/logo.png' %}" class = "logo">
+            </a>
+            <p id = "inf">
+                LLC "PumPum" - the official distributor 
+                of companies NESTE in BELARUS
+            </p>
+            <p id = "tel">+375 (29) 123-45-67 - retail<br>
+               +375 (29) 765-43-21 - wholesale
+            </p>
+            <div>
+                <a href={% url 'contact_page' %}>Callback request</a>
+            </div>    
+        </div>
+
+        <div id="menu">
+            <ul id=top_menu>
+                <li><a href = {% url 'home' %}>MAIN</a></li>
+                <li><a href={% url 'about' %}>ABOUT</a></li>
+                <li><a href={% url 'oils' %}>CATALOG</a>
+                    <ul class="inner_menu">
+                        <li><a href={% url 'motor' %}>MOTOR</a></li>
+                        <li><a href={% url 'transmission' %}>TRANSMISSION</a></li>
+                        <li><a href={% url 'hydraulic' %}>HYDRAULIC</a></li>
+                        <li><a href={% url 'grease' %}>GREASE</a></li>
+                    </ul>
+                </li>
+                <li><a href={% url 'posts' %}>PROMOTION</a></li>
+                <li><a href={% url 'contacts' %}>CONTACTS</a></li>
+            </ul>
+        </div>
+
+            <img src="{% static 'app/img/start.jpg' %}" class = "start">
+
+        <div class="promotion">
+            <h1> LLC "PumPum" - only original oils directly from Finland and Holland. </h1>
+        </div>
+
+        <div id = "sale">
+            {% for post in posts %}
+                <div class="post">
+                    <a href="{% url 'post' post.id %}"> 
+                        <h2> {{ post.title }}</h2>
+                    </a>
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" class="post-image"/>
+                    {% endif %}
+                </div>    
+            {% endfor %}
+        </div>
+
+        <div id = "info">
+            <h2>
+                <b>LARGEST MANUFACTURER OF SYNTHETIC BASE OILS</b>
+            </h2>
+            <ul>
+                <li> All products are developed and tested in Finland. </li>
+                <li> Neste lubricants are made from our own NEXBASE® base oils. </li>
+                <li> NEXBASE® base oils are used worldwide to make high quality synthetic motor and gear oils. ϟ </li>
+                <li> The development of Neste oils takes into account the harsh northern conditions with very large seasonal temperature fluctuations. </li>
+                <li> Neste quality and reliability are tested under extreme conditions.</li>
+                <li> Every day. </li>
+                <li> In different countries. </li>
+            </ul>
+        </div>
+
+        <div id="footer">
+            <p>LLC "PumPum" - the official distributor 
+                of companies NESTE in BELARUS. All rights reserved</p>
+        </div>
+
+    </body>
+</html>
