@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <div>
+    {% for m in motor %}
+        <h2> {{ m.name }}</h2>
+        <p>{{ m.short_description }}</p>
+        <p>{{ m.description }}</p>
+        <p>{{ m.price }}</p>
+        {% if m.image %}
+        <img src="{{ m.image.url}}" id = "img_m" />
+        {% endif %}
+    {% endfor %}
+    </div>    
+{% endblock  %}

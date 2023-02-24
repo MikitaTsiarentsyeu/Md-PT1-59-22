@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <div id = "grease">
+    {% for g in grease %}
+        <h2> {{ g.name }}</h2>
+        <p>{{ g.short_description }}</p>
+        <p>{{ g.description }}</p>
+        <p>{{ g.price }}</p>
+        {% if g.image %}
+        <img src="{{ g.image.url}}" id = "img_g" />
+        {% endif %}
+    {% endfor %}
+    </div>    
+{% endblock  %}
