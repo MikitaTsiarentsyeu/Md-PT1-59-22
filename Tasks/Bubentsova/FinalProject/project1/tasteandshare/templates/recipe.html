@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="main">
+        <p class="center"><i>{{ recipe.recipe_name }}</i></p>
+        <hr><br>
+        <div>
+            <a href="{% url 'recipes' %}"><button class="btn"><b>All Recipes</b></button></a>
+            <a href="{% url 'rate-recipe' recipe.id %}"><button class="btn"><b>Rate</b></button></a>
+            {% if user.is_authenticated %}
+                {% if perms.tasteandshare.recipe %}
+                    <a href="{% url 'edit-recipe' recipe.id %}"><button class="btn"><b>Edit</b></button></a>
+                    <a href="{% url 'delete-recipe' recipe.id %}"><button class="btn"><b>Delete</b></button></a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <br><br>
+        <section class="item">
+            <div class="recipe1body">
+                <div class="recipe1image">
+                    {% if recipe %}
+                        {% if recipe.image %}
+                            <img src="{{ recipe.image.url }}">
+                        {% else %}
+                            <img src = "{% static 'tasteandshare/img/default.jpg' %}">
+                        {% endif %}
+                    {% else %}
+                        <h1>Recipe with {{ id }} id does not exist</h1>
+                    {% endif %}
+                </div>
+                <div class="recipe1content">
+                    <h4>{{ recipe.calories }} | Time: {{ recipe.time }}</h4>
+                    <h4>Ingredients: <a href="{% url 'add-edit-ingredients' recipe.id %}">Add/Edit</a></h4>
+                    {% for ingredient in ingredients %}
+                        {{ ingredient.name }}, {{ ingredient.amount }}
+                        <hr>
+                    {% endfor %}
+                    <h4>Preparation:</h4>
+                        <p>{{ recipe.preparation }}</p><hr>
+                    <p><b>Author: </b>{{ recipe.author.name }}, added: {{ recipe.issued }}</p>
+                    {% if ratings %}
+                        <p><b>Rating:</b> {{ rating_av }} stars based on {{ rating_count }} reviews</p>
+                    <a href="{% url 'rating' recipe.id %}"><b>Comments</b></a>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

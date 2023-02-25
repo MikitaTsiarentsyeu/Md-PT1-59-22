@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="main">
+        <p class="center"><i>Recipes</i></p>
+        <hr><br>
+        <section>
+            <a href="{% url 'recipes' %}"><button class="btn"><b>All Recipes</b></button></a>
+            <a href="{% url 'salad' %}"><button class="btn"><b>Salad</b></button></a>
+            <a href="{% url 'soup' %}"><button class="btn"><b>Soup</b></button></a>
+            <a href="{% url 'hot-dish' %}"><button class="btn"><b>Hot dish</b></button></a>
+            <a href="{% url 'dessert' %}"><button class="btn"><b>Dessert</b></button></a>
+            <a href="{% url 'pasta' %}"><button class="btn"><b>Pasta</b></button></a>
+            <a href="{% url 'pizza' %}"><button class="btn"><b>Pizza</b></button></a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'add-recipe' %}"><button class="btn"><b>Add Recipe</b></button></a>
+            {% endif %}
+        </section>
+        <div class="row_rs">
+            {% for recipe in recipes %}
+                <div class="column_rs">
+                    <div class="card_rs">
+                        {% if recipe.image %}
+                            <a href="{% url 'recipe' recipe.id %}"><img src="{{ recipe.image.url }}" style="width:100%"></a>
+                        {% else %}
+                            <img src = "{% static 'tasteandshare/img/default.jpg' %}" style="width:100%">
+                        {% endif %}
+                        <div class="container_rs">
+                            <a href="{% url 'recipe' recipe.id %}">
+                                <h3 style="font-family: Georgia, serif">{{ recipe.recipe_name }}</h3>
+                            </a>
+                            <p>{{ recipe.calories }}, {{ recipe.time }} </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
