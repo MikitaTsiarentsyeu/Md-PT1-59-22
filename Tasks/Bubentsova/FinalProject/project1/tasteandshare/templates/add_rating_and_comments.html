@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main">
+        <p class="center"><i>Rate and comment the "{{ recipe.recipe_name }}" recipe</i></p>
+        <hr><br> 
+        <div class="container">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>{{ form.non_field_errors }}</div>  
+                {% for f in form %}
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="{{ f.id_for_label }}">{{ f.label }}: </label>
+                        </div>
+                        <div class="col-75">
+                            {{ f }}
+                        </div>
+                    </div>
+                <div class="form-error">{{ f.errors }}</div>
+                {% endfor %}
+                    <div class="row2">
+                        <a class="btn_cancel3" href="{% url 'recipes' %}"><b>Cancel</b></a>
+                        <input type="submit" value="Submit">
+                    </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main2">
+        <p class="center"><i>Add / Edit Ingredients</i></p>
+        <hr><br>
+        <form class="form-inline" method="POST">
+            {% csrf_token %}
+            {{ formset.management_form }}
+            {% for form in formset %}
+                <div>{{ form }}<hr></div>
+            {% endfor %}
+            <button class="btn_cancel2"><b>Submit</b></button>
+            <a class="btn_cancel3" href="{% url 'recipes' %}"><b>Cancel</b></a>
+        </form>
+    </div>
+{% endblock %}

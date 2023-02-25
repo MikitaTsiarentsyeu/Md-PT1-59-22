@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="main">
+        <p class="center"><i>Rating and comments to the "{{ recipe.recipe_name }}" recipe</i></p>
+        <hr><br>
+        <div>
+            <a href="{% url 'recipes' %}"><button class="btn"><b>All Recipes</b></button></a>
+        </div>
+        <br>
+        <div style="font-family: Lato, sans-serif;">
+            {% for rating in ratings %}
+                <p><b>Rating: </b>{{ rating.value }} stars</p>
+                <p><b>Author: </b>{{ rating.author }}, added: {{ rating.issued }}</p>
+                <p><b>Comment: </b>{{ rating.comment }}</p>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

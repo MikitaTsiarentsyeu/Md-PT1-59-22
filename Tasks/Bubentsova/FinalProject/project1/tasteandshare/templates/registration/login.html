@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="{% static 'tasteandshare/style/style.css' %}">
+    </head>
+    <body>
+        <div class="main_lr">
+            <p class="center"><i>Login Form</i></p>
+            <hr><br>
+            {% if form.errors %}
+            <p>Your username and password are not correct. Please try again</p>
+            {% endif %}
+
+            {% if next %}
+                {% if user.is_authenticated %}
+                    <p>You do not have access to this page</p>
+                {% else %}
+                    <p>Please login to see Taste&Share page</p>
+                {% endif %}
+            {% endif %}
+            <form class="form_lr" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="container_lr">
+                    <div class="login-form-input">
+                        <label class="label_lr" for="uname"><b>{{ form.username.label_tag }}</b></label>
+                        {{ form.username }}
+                    </div>
+                    <div class="login-form-input">
+                        <label class="label_lr" for="psw"><b>{{ form.password.label_tag }}</b></label>
+                        {{ form.password }}
+                    <br>    
+                    <button class="button_ln" type="submit">Log In</button>
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

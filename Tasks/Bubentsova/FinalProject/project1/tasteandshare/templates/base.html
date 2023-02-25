@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Taste&Share</title>
+        <link rel="stylesheet" href="{% static 'tasteandshare/style/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="{% url 'home' %}" class="logo"><i>Taste&Share</i></a>
+            <div class="search-container">
+                <form method=POST action="{% url 'search-recipes' %}">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Search recipes.." name="searched">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header-right">
+                {% if user.is_authenticated %}
+                    {{ user.get_username }}
+                    <a href="{% url 'account' %}">Account</a>
+                    <a href="{% url 'logout' %}?next={{ request.path }}">Log out</a>
+                {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}">Log in</a>
+                {% endif %}
+            </div>
+        </div>
+            {% block content %}
+            {% endblock%}
+        <footer>
+            <h3>Taste&Share</h3>
+        </footer>
+    </body>
+</html>
