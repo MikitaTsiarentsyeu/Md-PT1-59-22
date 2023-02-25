@@ -69,9 +69,7 @@ class ContactCreate(CreateView):
 
 def email(subject, data):
    send_mail(subject,
-      data,
-      'ciena777@mail.ru',
-      ['ciena777@mail.ru']
+      data
    )
 
 def success(request):

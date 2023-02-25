@@ -124,12 +124,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_PORT = 2525
-EMAIL_HOST_USER = 'ciena777@mail.ru'
-EMAIL_HOST_PASSWORD = 'GfyZ905D616r3aFhBqe0'
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+
 
 
 # Default primary key field type
