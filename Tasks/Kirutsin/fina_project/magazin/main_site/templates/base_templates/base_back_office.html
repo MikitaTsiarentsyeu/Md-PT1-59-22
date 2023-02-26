@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'main_site/css/back_office.css' %}">
+    <title>Back-office</title>
+</head>
+<body>
+<div id="user_bo">
+    <div id="user">
+        <p>Hello {{ username }}</p>
+        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'title' %}">Back to title</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+body{
+    background-image: url("../img/romashka-6.jpg");
+}
+#container {
+            background-color: #006b1b;
+        }
+        #head {
+            background-color: #81d4fa;
+            float: left;
+            border-top: solid;
+            border-left: solid;
+            border-right: solid;
+            width: 1000px;
+        }
+        #shop{
+            float: left;
+            width: 25%;
+        }
+        #user_bo{
+            float: left;
+            width: 25%;
+        }
+        #basket{
+            float: left;
+            width: 25%;
+        }
+        #contacts{
+            float: right;
+            width: 25%;
+
+        }
+        #body {
+            float: left;
+            width: 1003px;
+            position: static;
+            border-top: solid;
+            border-right: solid;
+
+        }
+        #catalog_list{
+            background-color: #5b80b2;;
+            float: left;
+            width: 15%;
+            border-bottom: solid;
+            border-left: solid;
+        }
+        #content{
+            background-color: #6f94c6;
+            float: left;
+            width: 84.4%;
+            border-left: solid;
+        }
+        #content_part{
+            padding: 10px;
+            border-bottom: solid;
+        }
+        #to_basket {
+            text-align: right;
+        }

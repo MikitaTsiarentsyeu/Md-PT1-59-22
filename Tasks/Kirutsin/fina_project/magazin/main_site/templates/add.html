@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+            <link rel="stylesheet" href="{% static 'main_site/css/bo.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<div id="result">
+    <p>Ty for add {{ result.name }}</p>
+    <a href="{% url 'title' %}"> Back to site</a>
+</div>
+</body>
+</html>

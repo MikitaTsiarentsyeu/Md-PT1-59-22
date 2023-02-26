@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'main_site/css/auth.css' %}">
+    <title>Authorization</title>
+</head>
+<body>
+<div id="auth_styles">
+    {% block auth %}
+    {% endblock %}
+</div>
+</body>
+</html>

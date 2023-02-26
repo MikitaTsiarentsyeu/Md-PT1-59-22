@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'main_site/css/bascet.css' %}">
+    <title>Basket</title>
+</head>
+<body>
+<div id="Basket">
+<p> Your products</p>
+<table>
+    <thead>
+    <td>Product</td>
+    <td>Description</td>
+    <td>Price</td>
+    <td>Currency</td>
+    </thead>
+<tbody>
+    {% for div_bascet in Bascet %}
+        <tr>
+        <td>{{ div_bascet.name.name }}</td>
+        <td>{{ div_bascet.description }}</td>
+        <td>{{ div_bascet.price }}</td>
+        <td>{{ div_bascet.currency }}</td>
+        <td><a href="{% url 'del_product_basket' div_bascet.id %}">delete</a></td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+<a href="{% url 'title' %}">Back to title</a>
+</div>
+</body>
+</html>
