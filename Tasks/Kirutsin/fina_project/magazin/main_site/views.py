@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Catalog, Products, Bascet
+from bascet.models import BapiConfig
 
 
 # Create your views here.
@@ -37,7 +38,13 @@ def del_product(request, id):
 def bascet(request):
     if request.user.is_authenticated:
         bascet_select = Bascet.objects.filter(user=request.user)
-        return render(request, 'base_templates/base_bascet.html', {"Bascet": bascet_select})
+        bank_data = BapiConfig.objects.get(bank_name='PS_widget_test')
+        total_amount = 0
+        default_currency = 'RUB'
+        for i in bascet_select:
+            total_amount += i.price
+
+        return render(request, 'base_templates/base_bascet.html', {"Bascet": bascet_select, "bank_data": bank_data, "total_amount": total_amount, "default_currency": default_currency})
     else:
         return render(request, 'registration/login.html')
 

@@ -44,9 +44,9 @@
           widget.pay(
           {
             // serviceId - Идентификатор ТСП
-            serviceId: "XXX",
+            serviceId: "{{ bank_data.bank_service_id }}",
             // key - Предоставляет тех. поддержка
-            key: "0423x039a8a049xxxxxxxxxxx44653b1aa980b28"
+            key: "{{ bank_data.bank_pubkey_id }}"
           },
             //Запрос с минимальным количеством параметров
             {
@@ -55,8 +55,8 @@
               },
               PaymentRequest: {
                 OrderId: "12YearsD345345ead3546456435inside",
-                Amount: "123",
-                Currency: "RUB",
+                Amount: "{{ total_amount }}",
+                Currency: "{{ default_currency }}",
                 Description: "string",
                 RebillFlag: true,
               },

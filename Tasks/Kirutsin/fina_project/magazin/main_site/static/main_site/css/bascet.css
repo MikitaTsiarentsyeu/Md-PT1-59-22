@@ -5,6 +5,9 @@ body{
     position: center;
     padding-left: 50%;
 }
+#pay_button{
+    padding-left: 50%;
+}
 td{
     border: solid;
 }
