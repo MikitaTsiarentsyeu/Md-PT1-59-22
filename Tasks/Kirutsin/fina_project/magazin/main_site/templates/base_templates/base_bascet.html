@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://widget.payselection.com/lib/pay-widget.js"></script>
+    <link rel="stylesheet" href="{% static 'main_site/css/bascet.css' %}">
+    <title>Basket</title>
+</head>
+<body>
+<div id="Basket">
+<p> Your products</p>
+<table>
+    <thead>
+    <td>Product</td>
+    <td>Description</td>
+    <td>Price</td>
+    <td>Currency</td>
+    </thead>
+<tbody>
+    {% for div_bascet in Bascet %}
+        <tr>
+        <td>{{ div_bascet.name.name }}</td>
+        <td>{{ div_bascet.description }}</td>
+        <td>{{ div_bascet.price }}</td>
+        <td>{{ div_bascet.currency }}</td>
+        <td><a href="{% url 'del_product_basket' div_bascet.id %}">delete</a></td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+<a href="{% url 'title' %}">Back to title</a>
+</div>
+<div id="pay_button">
+     <!-- создаем кнопку для виджета -->
+    <input type="button" onclick="pay()"
+       value="PAY" />
+    <!-- Для появления платежной формы необходимо зарегистрировать функцию для вызова метода pay -->
+    <script type="text/javascript">
+        this.pay = function() {
+          var widget = new pw.PayWidget();
+          console.log("PAY");
+          widget.pay(
+          {
+            // serviceId - Идентификатор ТСП
+            serviceId: "{{ bank_data.bank_service_id }}",
+            // key - Предоставляет тех. поддержка
+            key: "{{ bank_data.bank_pubkey_id }}"
+          },
+            //Запрос с минимальным количеством параметров
+            {
+              MetaData: {
+                PaymentType: "Pay",
+              },
+              PaymentRequest: {
+                OrderId: "12YearsD345345ead3546456435inside",
+                Amount: "{{ total_amount }}",
+                Currency: "{{ default_currency }}",
+                Description: "string",
+                RebillFlag: true,
+              },
+            },
+            // Запрос с максимальным количеством параметров
+            // См. запрос Create
+            {
+              // Варианты ключей которые могут приходить по колбекам:
+              // для onSuccess -> PAY_WIDGET:TRANSACTION_SUCCESS
+              // для onError -> PAY_WIDGET:TRANSACTION_FAIL, PAY_WIDGET:CREATE_NETWORK_ERROR, PAY_WIDG:CREATE_BAD_REQUEST_ERROR
+              onSuccess: function(res) {
+                console.log("onSuccess from shop", res);
+              },
+              onError: function(res) {
+                console.log("onFail from shop", res);
+              },
+              onClose: function(res) {
+                console.log("onClose from shop", res);
+              },
+            },
+          );
+        };
+    </script>
+</div>
+</body>
+</html>

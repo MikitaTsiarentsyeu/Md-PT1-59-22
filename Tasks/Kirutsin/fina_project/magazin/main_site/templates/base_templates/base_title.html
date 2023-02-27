@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'main_site/css/catalog_2.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<div id="container">
+    <div id="head">
+        <div id="shop">
+            <p>Stranding products</p>
+        </div>
+        <div id="user_bo"><a href="{% url 'user_bo' %}">Back-office</a></div>
+        <div id="basket"><a href="{% url 'basket_view' %}">Basket</a></div>
+        <div id="contacts"><p>contacts</p></div>
+    </div>
+    <div id="body">
+        <div id="catalog_list">
+            <ul>
+                {% for product in catalog %}
+                    <li><a href="{% url 'product_info' product.catalog_name %}">{{ product.catalog_name }}</a></li>
+                {% endfor %}
+                <li><a href="/title/">All content</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            {% for div_content in content %}
+                <div id="content_part">
+                    <div id="content_part_name">
+                        <h2>{{ div_content.name }}</h2>
+                    </div>
+                    <div id="content_part_description">
+                        <p>Short description: {{ div_content.description}}</p>
+                    </div>
+                    <div id="content_part_currency">
+                        <p>currency :{{ div_content.currency }}</p>
+                    </div>
+                    <div id="content_part_price">
+                        <p>price: {{ div_content.price }}</p>
+                    </div>
+                    <div id="to_basket">
+                        <a href="{% url 'add_product_basket' div_content.name %}">Basket</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

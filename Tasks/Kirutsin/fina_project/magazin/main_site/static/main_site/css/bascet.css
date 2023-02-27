@@ -1,0 +1,19 @@
+body{
+    background-image: url("../img/romashka-6.jpg");
+}
+#Basket{
+    position: center;
+    padding-left: 50%;
+}
+#pay_button{
+    padding-left: 50%;
+}
+td{
+    border: solid;
+}
+thead{
+    background-color: #4ac1f7;
+}
+tbody{
+    background-color: #5b80b2;
+}
