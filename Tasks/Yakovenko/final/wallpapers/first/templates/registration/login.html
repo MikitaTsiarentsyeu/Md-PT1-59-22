@@ -1,0 +1,55 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>W.Signin</title>
+
+    <link href="{% static 'first/style/bootstrap.min.css' %} " rel="stylesheet">
+    <link href="{% static 'first/style/sign-in.css' %}" rel="stylesheet">
+
+  </head>
+  <body class="text-center">
+
+<main class="form-signin w-100 m-auto">
+{% if form.errors %}
+<p class="lead text-muted">Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+{% if user.is_authenticated %}
+  <p class="lead text-muted">Your account doesn't have access to this page. To proceed,
+  please login with an account that has access.</p>
+{% else %}
+  <p class="lead text-muted">Please login to see this page.</p>
+{% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+    <a href="{% url 'posts' %}">
+    <img class="mb-4" src="{% static 'first/img/forum.png' %}" alt="" width="72" height="57">
+    </a>
+    {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+      <div class="form-floating">
+        <div class="form-control">
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        </div>
+      </div>
+      <div class="form-floating">
+        <div class="form-control">
+        {{ form.password.label_tag }}
+        {{ form.password }}
+        </div>
+      </div><br>
+      
+    <button class="btn btn-warning" type="submit">Sign in</button> 
+    <input type="hidden" name="next" value="{% url 'posts' %}" />
+  </form>
+</main>
+  </body>
+</html>
