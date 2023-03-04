@@ -41,7 +41,7 @@ def add_recipe(request):
             recipe.author = Author.objects.get(email=request.user.email)
 
             recipe.save()
-            return redirect('recipes')
+            return redirect('recipe', recipe.id)
     else: 
         form = RecipeForm()
     return render(request, 'add_edit_recipe.html', {'form':form})
@@ -56,7 +56,7 @@ def add_edit_ingredients(request, id):
         formset = IngredientFormSet(request.POST, instance=recipe)
         if formset.is_valid():
             formset.save()
-            return redirect('recipes')
+            return redirect('recipe', recipe.id)
 
     context = {'formset':formset}
     return render(request, 'add_edit_ingredients.html', context)
@@ -72,7 +72,7 @@ def edit_recipe(request, id):
             if form.is_valid():
                 
                 form.save()
-                return redirect('recipes')
+                return redirect('recipe', recipe.id)
         context = { 'form': form }
         return render(request, 'add_edit_recipe.html', context)
     except Recipe.DoesNotExist:
@@ -126,7 +126,7 @@ def add_rating_comment(request, id):
             rating.author = Author.objects.get(email=request.user.email)
 
             rating.save()
-            return redirect('recipes')
+            return redirect('recipe', recipe.id)
     else: 
         form = RatingForm()
     return render(request, 'add_rating_and_comments.html', {'form':form, 'recipe':recipe})
@@ -181,8 +181,7 @@ def get_pizza(request):
 def account(request):
     author = Author.objects.get(email=request.user.email)
     prohibitedFoodstuffs = author.prohibitedfoodstuff_set.all()
-    context = {'author':author, 'prohibitedFoodstuffs':prohibitedFoodstuffs}     
-    author = False
+    context = {'author':author, 'prohibitedFoodstuffs':prohibitedFoodstuffs}
     return render(request, 'account.html', context)
 
 
