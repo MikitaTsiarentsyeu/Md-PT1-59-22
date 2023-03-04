@@ -10,8 +10,8 @@
             {% for form in formset %}
                 <div>{{ form }}<hr></div>
             {% endfor %}
-            <button class="btn_cancel2"><b>Submit</b></button>
-            <a class="btn_cancel3" href="{% url 'account' %}"><b>Cancel</b></a>
+            <button><b>Submit</b></button>
+            <a class="btn_cancel2" href="{% url 'account' %}"><b>Cancel</b></a>
         </form>
     </div>
 {% endblock %}

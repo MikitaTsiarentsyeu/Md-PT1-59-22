@@ -8,9 +8,10 @@
         <hr><br>
         <div>
             <a href="{% url 'recipes' %}"><button class="btn"><b>All Recipes</b></button></a>
+            <a href="{% url 'recipe' recipe.id %}"><button class="btn"><b>Back to {{ recipe.recipe_name }}</b></button></a>
         </div>
         <br>
-        <div style="font-family: Lato, sans-serif;">
+        <div class="item2">
             {% for rating in ratings %}
                 <p><b>Rating: </b>{{ rating.value }} stars</p>
                 <p><b>Author: </b>{{ rating.author }}, added: {{ rating.issued }}</p>

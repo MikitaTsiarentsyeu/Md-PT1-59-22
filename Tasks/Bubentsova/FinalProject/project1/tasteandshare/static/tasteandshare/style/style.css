@@ -1,15 +1,17 @@
 * {box-sizing: border-box;}
 
 body {
-margin: 0;
-background-color: #f1f1f1;
-font-family: Georgia, serif;
+  margin: 0;
+  background-color: #f1f1f1;
+  font-family: Georgia, serif;
 }
 
+
 .center {
-    text-align: center;
-    font-size: 30px;
+  text-align: center;
+  font-size: 30px;
 }
+
 
 .center2 {
   text-align: center;
@@ -17,69 +19,72 @@ font-family: Georgia, serif;
   font-family: "Lato", sans-serif;
 }
 
+
 .delete_r1{
   text-align: center;
   padding-right: 10px;
 }
+
 
 .delete_r2{
   text-align: center;
   min-height: calc(100vh - 80px);
 }
 
+
 .header {
-    top: 0;
-    position: fixed;
-    overflow: hidden;
-    background-color: lightseagreen;
-    padding: 20px 10px;
-    width: 100%;
-    justify-content: space-between;
-    display: flex
+  top: 0;
+  position: fixed;
+  overflow: hidden;
+  background-color: lightseagreen;
+  padding: 20px 10px;
+  width: 100%;
+  justify-content: space-between;
+  display: flex
 }
+
 
 .header a {
-    float: left;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 17px; 
-    line-height: 25px;
-    border-radius: 4px;
+  float: left;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 17px; 
+  line-height: 25px;
+  border-radius: 4px;
 }
+
 
 .header a.logo {
-    font-size: 30px;
-    font-weight: bold;
-    text-transform: none;
-    padding-left: 70px;
-    padding-right: 300px;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: none;
+  padding-left: 70px;
+  padding-right: 300px;
 }
 
+
 .header a:hover {
-    color: black;
+  color: black;
 }
 
 
 .header-right {
-    float: right;
-    padding-right: 70px;
+  float: right;
+  padding-right: 70px;
 }
+
 
 .main {
-    padding: 80px;
-    max-width: 1500px;
-    margin: auto;
-    min-height: calc(100vh - 80px);
+  padding: 80px;
+  max-width: 1500px;
+  margin: auto;
+  min-height: calc(100vh - 80px);
 }
 
-/* .main2 {
-    padding-top: 80px;
-    margin: auto;
-} */
 
 .main2 {
   padding: 80px;
@@ -88,241 +93,271 @@ font-family: Georgia, serif;
   min-height: calc(100vh - 80px);
 }
 
+
 .main3 {
-  max-width: 170px;
+  max-width: 200px;
   margin: auto;
-  margin-top: 0px;
-  }
+  min-height: calc(100vh - 80px);
+}
+
 
 @media screen and (max-width: 500px) {
-    .header a {
-    float: none;
-    display: block;
-    text-align: left;
-    }
+  .header a {
+  float: none;
+  display: block;
+  text-align: left;
+  }
 
-    .main {
-    width: 100%;
-    }
+  .main {
+  width: 100%;
+  }
 }
+
 
 footer {
-    background-color: lightseagreen;
-    padding: 10px;
-    text-align: center;
-    font-size: 15px;
-    color: white;
-    font-weight: bold
+  background-color: lightseagreen;
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  font-weight: bold
 }
+
 
 .header .search-container {
-float: none;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
 
 .header input[type=text] {
-padding: 5px;
-margin-top: 4px;
-font-size: 17px;
-border: none;
+  padding: 5px;
+  margin-top: 4px;
+  font-size: 17px;
+  border: none;
 }
 
+
 .header .search-container button {
-    float: right;
-    padding: 6px 10px 4px;
-    margin-top: 4px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
+  float: right;
+  padding: 6px 10px 4px;
+  margin-top: 4px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
 }
+
 
 .header .search-container button:hover {
     background: #ccc;
 }
 
+
 @media screen and (max-width: 600px) {
-    .header .search-container {
+  .header .search-container {
     float: none;
-    }
-    .header a, .header input[type=text], .header .search-container button {
+  }
+  .header a, .header input[type=text], .header .search-container button {
     float: none;
     display: block;
     text-align: left;
     width: 100%;
     margin: 0;
     padding: 14px;
-    }
-    .header input[type=text] {
+  }
+  .header input[type=text] {
     border: 1px solid #ccc;  
-    }
+  }
 }
 
+
 h1 {
-    font-size: 50px;
-    word-break: break-all;
+  font-size: 50px;
+  word-break: break-all;
 }
 
 .row {
-    margin: 10px -16px;
+  margin: 10px -16px;
 }
+
 
 .row,
 .row > .column {
-    padding: 8px;
+  padding: 8px;
 }
 
 .column {
-    float: left;
-    width: 33.33%;
+  float: left;
+  width: 33.33%;
 }
+
 
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    padding: 0px
+  content: "";
+  display: table;
+  clear: both;
+  padding: 0px
 }
+
 
 .content {
-    text-align: center;
-    background-color: white;
-    padding: 10px;
+  text-align: center;
+  background-color: white;
+  padding: 10px;
 }
+
 
 .show {
-    display: block;
+  display: block;
 }
 
+
 .btn {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: white;
-    cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
+
 
 .btn.active {
-    background-color: #666;
-    color: white;
+  background-color: #666;
+  color: white;
 }
+
 
 input[type=text2], select, textarea {
-width: 100%;
-padding: 12px;
-border: 1px solid #ccc;
-border-radius: 4px;
-resize: vertical;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
+
 
 label {
-padding: 12px 12px 12px 30%;
-display: inline-block;
+  padding: 12px 12px 12px 30%;
+  display: inline-block;
 }
+
 
 input[type=submit] {
-background-color: lightseagreen;
-color: white;
-padding: 12px 20px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-float: right
+  background-color: lightseagreen;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right
 }
+
 
 input[type=submit]:hover {
-background-color: #45a049;
+  background-color: #45a049;
 }
+
 
 .container {
-border-radius: 5px;
-background-color: #f2f2f2;
-padding: 10px 40px;
-padding-right: 200px
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px 40px;
+  padding-right: 200px
 }
 
+
 .col-25 {
-font-family: "Lato", sans-serif;
-float: left;
-width: 20%;
-margin-top: 6px;
+  font-family: "Lato", sans-serif;
+  float: left;
+  width: 20%;
+  margin-top: 6px;
 }
 
 .col-75 {
-float: left;
-width: 80%;
-margin-top: 6px;
+  float: left;
+  width: 80%;
+  margin-top: 6px;
 }
 
 .row2:after {
-padding: 0px;
-content: "";
-display: table;
-clear: both;
+  padding: 0px;
+  content: "";
+  display: table;
+  clear: both;
 }
+
 
 @media screen and (max-width: 600px) {
 .col-25, .col-75, input[type=submit] {
     width: 100%;
     margin-top: 0;
-}
+  }
 }
 
 .column1 {
-float: left;
-width: 50%;
-padding: 10px;
+  float: left;
+  width: 50%;
+  padding: 10px;
 }
 
+
 .column2 {
-float: left;
-width: 50%;
-padding: 10px;
+  float: left;
+  width: 50%;
+  padding: 10px;
 }
+
 
 @media screen and (max-width: 900px) {
 .column1, .column2  {
     width: 50%;
+  }
 }
-}
+
 
 @media screen and (max-width: 600px) {
 .column1, .column2  {
-    width: 100%;
+  width: 100%;
 }
 }
+
 
 .row7:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-
-.item{min-height: calc(100vh - 80px);}
-
-.recipe1body{
-    display: flex;
-    margin: 0px 0px 30px 0px;
-
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.recipe1image{
-    flex: 0 0 200px;
+
+.item{
+  min-height: calc(100vh - 80px);
+}
+
+
+.item2{
+  font-family: Lato, sans-serif;
+  min-height: calc(100vh - 80px);
+}
+
+
+.recipe1body{
+  display: flex;
+  margin: 0px 0px 30px 0px;
 }
 
 .recipe1image{
   flex: 0 0 200px;
 }
+
 
 .account_image img{
   margin-left: 20px;
@@ -330,11 +365,13 @@ padding: 10px;
   border-radius: 20%;
 }
 
+
 .recipe1content{
-    font-family: "Lato", sans-serif;
-    flex: 1 1 auto;
-    padding: 0px 0px 0px 30px
+  font-family: "Lato", sans-serif;
+  flex: 1 1 auto;
+  padding: 0px 0px 0px 30px
 }
+
 
 .account_content{
   font-family: "Lato", sans-serif;
@@ -353,38 +390,44 @@ padding: 10px;
   flex: 1 1 auto;
 }
 
+
 .column_rs {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
 }
   
+
 @media screen and (max-width: 650px) {
     .column_rs {
-      width: 100%;
-      display: block;
+    width: 100%;
+    display: block;
 
-      float: left;
-      width: 33.33%;
-    }
+    float: left;
+    width: 33.33%;
+  }
 }
   
+
 .card_rs {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: white;
   padding: 10px;
 }
   
+
 .container_rs {
   padding: 0 16px;
   text-align: center;
   font-family: "Lato", sans-serif;
 }
 
+
 .row_rs{
   margin: 10px -16px;
 }
+
 
 .container_rs::after, .row_rs::after {
   content: "";
@@ -392,10 +435,12 @@ padding: 10px;
   display: table;
 }
 
+
 .row_rs,
 .row_rs > .column_rs {
   padding: 8px;
 }
+
 
 .row_rs:after {
   content: "";
@@ -404,6 +449,7 @@ padding: 10px;
   padding: 0px
 }
 
+
 .column_ac {
   float: left;
   width: 50%;
@@ -411,7 +457,6 @@ padding: 10px;
   border: 1px solid lightgray;
   font-family: "Lato", sans-serif;
   background-color: whitesmoke;
-  
 }
 
 
@@ -420,8 +465,6 @@ padding: 10px;
   display: table;
   clear: both;
   min-height: calc(100vh - 80px);
-  
-
 }
 
 
@@ -431,13 +474,16 @@ padding: 10px;
   }
 }
 
+
 @media screen and (max-width: 600px) {
   .column_ac  {
     width: 100%;
   }
 }
 
+
 .form_lr {border: 3px solid #f1f1f1;}
+
 
 input[type=text_lr], input[type=password_lr] {
   width: 100%;
@@ -447,6 +493,7 @@ input[type=text_lr], input[type=password_lr] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
 
 .button_ln {
   background-color: lightseagreen;
@@ -458,6 +505,7 @@ input[type=text_lr], input[type=password_lr] {
   width: 100%;
 }
 
+
 .button_ln:hover {
   opacity: 0.8;
 }
@@ -466,17 +514,20 @@ input[type=text_lr], input[type=password_lr] {
   padding: 16px;
 }
 
+
 span.psw {
   float: right;
   padding-top: 16px;
 }
 
+
 @media screen and (max-width: 300px) {
   span.psw {
-      display: block;
-      float: none;
+    display: block;
+    float: none;
   }
 }
+
 
 .label_lr{
   padding-left: 1px;
@@ -484,83 +535,55 @@ span.psw {
 
 }
 
-/* .registerbtn {
-  background-color: lightseagreen;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity: 1;
-} */
-
 
 .lr {
   text-align: center;
   font-family: "Lato", sans-serif;
-
 }
+
 
 .main_lr {
   max-width: 1500px;
   margin: auto;
 }
 
-/* /* .main_cancel {
-padding: 80px;
-max-width: 600px;
-margin: auto;
-} */
-
-
-
-/* .main_cancel3 {
-max-width: 1000px;
-margin: auto;
-padding: 80px;
-}  */
 
 .btn_cancel1 {
-border: none;
-outline: none;
-padding: 12px 16px;
-background-color: lightseagreen;
-cursor: pointer;
-float: left;
-border-radius: 4px;
-font-family: "Lato", sans-serif;
-font-size: 13px;
-text-decoration: none;
-text-transform: none;
-color: white
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: lightseagreen;
+  cursor: pointer;
+  float: left;
+  border-radius: 4px;
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: none;
+  color: white
 }
 
 
 .btn2 {
-border: none;
-outline: none;
-padding: 12px 16px;
-background-color: red;
-cursor: pointer;
-float: right;
-border-radius: 4px;
-font-family: "Lato", sans-serif;
-font-size: 13px;
-color: white
-
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: red;
+  cursor: pointer;
+  float: right;
+  border-radius: 4px;
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  color: white
 }
 
-.btn_cancel3 {
-padding: 12px 12px 12px 6%;
-font-family: "Lato", sans-serif;
-float: right;
 
+.btn_cancel2 {
+  padding: 12px 12px 12px 6%;
+  font-family: "Lato", sans-serif;
+  float: right;
 }
+
 
 .ingrs{
   font-family: "Lato", sans-serif;
@@ -569,60 +592,68 @@ float: right;
   margin-top: 10px;
 }
 
+
 .form-inline {  
-display: flex;
-flex-direction: column;
-justify-content: center;
-flex-flow: row wrap;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
+
 .form-inline label {
-margin: 5px 10px 5px 0;
+  margin: 5px 10px 5px 0;
 }
 
 .form-inline input {
-vertical-align: middle;
-margin: 5px 10px 5px 0;
-padding: 10px;
-border: 1px solid #ddd;
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
+
 .form-inline button {
-padding: 10px 20px;
-background-color: lightseagreen;
-border: 1px solid #ddd;
-color: white;
-cursor: pointer;
+  padding: 10px 20px;
+  background-color: lightseagreen;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
 }
+
 
 @media (max-width: 800px) {
 .form-inline input {
-  margin: 10px 0;
-}
+    margin: 10px 0;
+  }
+
 
 .form-inline {
-  flex-direction: column;
-  align-items: stretch;
-}
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
+
 .form-inline input[type=submit] {
-background-color: lightseagreen;
-color: white;
-padding: 12px 20px;
-margin-left: 600px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-float: right
+  background-color: lightseagreen;
+  color: white;
+  padding: 12px 20px;
+  margin-left: 600px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right
 }
+
 
 .form-inline label {
   font-family: "Lato", sans-serif;
   padding: 12px 12px 12px 0%;
   display: inline-block;
 }
+
 
 .form-error{
   font-family: "Lato", sans-serif;
