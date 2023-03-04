@@ -225,6 +225,7 @@ h1 {
   cursor: pointer;
 }
 
+
 .btn:hover {
   background-color: #ddd;
 }
@@ -282,11 +283,13 @@ input[type=submit]:hover {
   margin-top: 6px;
 }
 
+
 .col-75 {
   float: left;
   width: 80%;
   margin-top: 6px;
 }
+
 
 .row2:after {
   padding: 0px;
@@ -302,6 +305,7 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
+
 
 .column1 {
   float: left;
@@ -509,6 +513,7 @@ input[type=text_lr], input[type=password_lr] {
 .button_ln:hover {
   opacity: 0.8;
 }
+
 
 .container_lr {
   padding: 16px;
