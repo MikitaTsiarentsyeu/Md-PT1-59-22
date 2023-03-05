@@ -181,7 +181,7 @@ def get_pizza(request):
 def account(request):
     author = Author.objects.get(email=request.user.email)
     prohibitedFoodstuffs = author.prohibitedfoodstuff_set.all()
-    context = {'author':author, 'prohibitedFoodstuffs':prohibitedFoodstuffs}
+    context = {'author':author, 'prohibitedFoodstuffs':prohibitedFoodstuffs}     
     return render(request, 'account.html', context)
 
 
