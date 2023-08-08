@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="{% static 'first/img/forum.png' %}" alt="" width="72" height="57">
+      <h2>Select your image name and download )
+      </h2>
+    </div>
+
+    <div>
+      <div class="col-md-7 col-lg-8">
+        <form method = "POST" enctype = "multipart/form-data">
+            {% csrf_token %}
+       
+            {{ form.title }}<br>
+            {{ form.image }}<br>
+
+            <br> <button class="w-400 btn btn-primary btn-lg" type="submit">Add post</button> <br>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

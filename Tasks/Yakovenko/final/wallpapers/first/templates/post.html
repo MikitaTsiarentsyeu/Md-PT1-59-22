@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <main>
+
+      <section class="py-5 text-center container">
+          <div class="row py-lg-7">
+            <div class="col-lg-8 col-md-8 mx-auto">
+            
+              <h1 class="fw-light">{{ post.title }}
+              </h1>
+              <p class="lead text-muted"> by {{ post.author.name }}</p>
+            </div>
+          </div>
+        </section>
+
+      <div>    
+
+      {% if post.image %}
+      <img class="bd-placeholder-img card-img-top" src="{{ post.image.url }}"></img>
+      {% endif %}
+      </div>
+  </main>
+{% endblock %}

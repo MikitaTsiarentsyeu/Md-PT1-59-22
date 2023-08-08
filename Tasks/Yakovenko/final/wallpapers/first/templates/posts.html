@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main>
+      {% if perms.app.add_post %}
+      <section class="py-5 text-center container">
+        <div class="row py-lg-7">
+          <div class="col-lg-8 col-md-8 mx-auto">
+          
+            <h1 class="fw-light">Share my picture
+            </h1>
+            <a href="{% url 'add' %}">
+              <img src="{% static 'first/img/plus.png' %}" width="200" height="200"></img>
+            </a>
+          </div>
+        </div>
+      </section>
+      {% endif %}
+      <section class="py-5 text-center container">
+        <div class="row py-lg-7">
+          <div class="col-lg-8 col-md-8 mx-auto">
+          
+            <h1 class="fw-light">Please login to add your wallpapers :)
+            </h1>
+          </div>
+        </div>
+      </section>
+  <div>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for post in posts %}
+          <div class="col">
+            <div class="card shadow-sm">
+              {% if post.image %}
+              <a href="{% url 'post' post.id %}">
+              <img class="bd-placeholder-img card-img-top" width="352" height="240" src="{{ post.image.url }}"></img>
+            </a>
+              {% endif %}
+              <div class="card-body">
+                  <p class="card-text">{{ post.title }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="{% url 'post' post.id %}">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  {% if post.id in viewed_posts %}
+                  <small class="text-muted">viewed</small>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
